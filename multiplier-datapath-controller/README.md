@@ -13,3 +13,5 @@ Datapath:
 
 Control Path:  
 ![Control Path](files/controlpath-multiplier.png "Control Path")
+
+Image credits to NPTEL
