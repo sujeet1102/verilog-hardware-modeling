@@ -1,6 +1,6 @@
 # Some Hardware Modeling using Verilog
 
-#### -------------- Synthesis Rules for Combinational Logic --------------------------------
+#### Synthesis Rules for Combinational Logic
 The output of a combinational logic circuit at time t should depend only upon 
 the inputs applied at time t. 
 Rules to be followed: 
@@ -10,7 +10,7 @@ For "if...else" or "case" constructs, the output of the combinational function m
 be specified for all possible input cases. 
 If the rules the not followed, the circuit may be synthesized as sequential. 
 
-#### ------------- Styles for Synthesizable Combinational Logic ----------------------------
+#### Styles for Synthesizable Combinational Logic
 The possible styles for modeling combinational logic are as follows: 
 Netlist Of Verilog built-in primitives like gate instances (AND, OR, NAND, etc.). 
 Combinational UDP (not all synthesis tools support this). 
@@ -20,7 +20,7 @@ Behavioral statements.
 Tasks without event or delay control.
 Interconnected modules of one or more of the above.
 
-#### -------------- Constructs to Avoid for Combinational Synthesis ------------------------
+#### Constructs to Avoid for Combinational Synthesis
 Edge-dependent event control. 
 Combinational feedback loops. 
 Procedural or continuous assignment containing event or delay control. 
@@ -29,7 +29,7 @@ Data dependent loops.
 Sequential user defined primitives (UDPs). 
 Other miscellaneous constructs like "fork … join", "wait", "disable", etc. 
 
-#### ----------------------- Non-Synthesizable Constructs ----------------------------------
+#### Non-Synthesizable Constructs 
 "initial" construct.
 Delays in assignments and test benches. 
 "time" construct.
@@ -40,7 +40,7 @@ The operators "===" and "!=="
 Variables in loop control.
 
 
-#### ------------------------------ Naming Conventions -------------------------------------
+#### Naming Conventions 
 - File Naming 
 A file must contain only one design unit, contained in a single "module endmodule"
 construct. 
@@ -60,7 +60,7 @@ Signals that are used for clocking that do not have the word "clock" or already 
 names, must use the suffix "_clk" (e.g. bus_clk). 
 Unrelated signals must not be bundled into buses. 
 
-#### ------------------------------------- Comments --------------------------------------------
+#### Comments 
 Comments are required to describe the functionality of a design unit. 
 Each file must contain a file header, that follows some convention. 
 The header must include the name of the file. 
@@ -73,7 +73,7 @@ The header must contain information describing the parameters being used in the 
 The number of clock domains and clocking strategy must be documented. 
 Critical timing including external timing relationships must be documented. 
 
-#### ----------------------------------- Coding Style --------------------------------------------
+#### Coding Style 
 Good coding style helps in easy understanding Of the code and maintainability. 
 Write code with proper indentation in a tabular format. 
 A constant indentation Of 2 to 4 spaces must be used for code alignment; do not use tab stops 
@@ -85,7 +85,7 @@ Keep line length less than 80 characters, so as to avoid line wraps.
 When declaring ports, declare one port per line. Descriptive comment must follow each port 
 listing.
 
-#### ---------------------------------- Module Partitioning --------------------------------------
+#### Module Partitioning 
 Used for reducing complexity, and also to minimize the chances Of error. 
 Procedure, tasks and functions must not access or modify signals / variables not passed as 
 parameter to the module. 
@@ -98,7 +98,7 @@ The design should be partitioned so as to minimize the number Of interface signa
 DO not mix structural and behavioral RTL code within a construct.
 State machines and asynchronous logic must be partitioned in a separate block. 
 
-#### --------------------------------- General Coding Techniques -------------------------------------
+#### General Coding Techniques 
 Some Of the general guidelines for coding are as follows. 
 The expression in a condition must be a 1-bit value. 
 Replace "if (bus) data_avail = 1" by "if (bus > 0) data_avail = 1". 
@@ -107,7 +107,7 @@ Do not infer latches in functions, function is supposed to synthesize combinatio
 Operand sizes should match. 
 Use parentheses in complex expressions. 
 
-#### ----------------------------- General Guidelines for Synthesis ---------------------------------
+#### General Guidelines for Synthesis 
 Some guidelines for synthesizable blocks are as follows. 
 All "always" blocks inferring combinational logic or a latch must have a sensitivity list 
 containing all input signals. 
