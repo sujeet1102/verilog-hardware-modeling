@@ -110,9 +110,9 @@ Verilog user defined primitives must not be used.
 Use non-blocking assignments in edge-sensitive constructs.  
 The internal "wire" declarations must follow the port I/O declarations at the top of the module.  
 Use explicit port references in module instantiations.  
-full _ adder FA (  . sum (S),  
-                   . in2 (B)   
-		     );  
+full _ adder FA (      . sum (S),  
+                . in2 (B)   
+);  
 Use of "casex' statement is not allowed which treats "x" and "z" states as don't cares in synthesis.  
 Use parameters for state encoding.  
 Only use ports of type "input" or "output"; ports of type "inout" (bidirectional) should be avoided.  
